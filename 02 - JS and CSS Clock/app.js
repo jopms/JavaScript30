@@ -36,7 +36,7 @@ function getTime(){
 
     secondsHtml.style.transform = `rotate(${(seconds*6)+90}deg)`;
     minutesHtml.style.transform = `rotate(${(minutes*6)+90}deg)`;
-    hoursHtml.style.transform = `rotate(${(hours*15)+90}deg)`;
+    hoursHtml.style.transform = `rotate(${(hours*30)+90}deg)`;
 }
 
 getTime();
