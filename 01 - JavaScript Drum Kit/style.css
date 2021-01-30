@@ -35,6 +35,12 @@ body{
     min-width: 60px;
     backdrop-filter: blur(2px);
     box-shadow: 1px 1px 10px black;
+    transition: all 0.08s;
+}
+
+.playing{
+    box-shadow: 2px 2px 20px #FB1;
+    transform: scale(1.1);
 }
 
 h1{
@@ -45,7 +51,6 @@ h1{
     text-transform: uppercase;
     font-family: 'Slabo 27px', serif;
     font-size: 23px;
-    
 }
 
 p{
@@ -59,3 +64,4 @@ p{
     font-weight:600;
     letter-spacing: 1px;
 }
+
