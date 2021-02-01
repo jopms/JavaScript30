@@ -139,7 +139,7 @@ panel.forEach(pan => pan.addEventListener('click', addClass))
 panel.forEach(pan => pan.addEventListener('transitionend', addText))
 
 function addText(e){
-  if(e.propertyName === "flex-grow"){
+  if(e.propertyName.includes('flex')){
     this.classList.toggle("text")
   };
 }
