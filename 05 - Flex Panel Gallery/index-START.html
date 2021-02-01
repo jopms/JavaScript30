@@ -26,6 +26,8 @@
     .panels {
       min-height: 100vh;
       overflow: hidden;
+      display: flex;
+      
     }
 
     .panel {
@@ -43,6 +45,11 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
+      display: flex;
+      flex:1;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
 
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -56,6 +63,10 @@
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex:1;
     }
 
     .panel p {
@@ -71,7 +82,22 @@
 
     .panel.open {
       font-size: 40px;
+      flex: 5;
     }
+
+    .panel :first-child{
+      transform:translateY(-100%)
+    }
+    .text :first-child{
+      transform:translateY(0%)
+    }
+    .panel :last-child{
+      transform:translateY(100%)
+    }
+    .text :last-child{
+      transform:translateY(0%)
+    }
+
 
   </style>
 
@@ -105,10 +131,21 @@
   </div>
 
   <script>
+const panel = document.querySelectorAll('.panel');
+panel.forEach(pan => pan.addEventListener('click', addClass))
+panel.forEach(pan => pan.addEventListener('transitionend', addText))
 
-  </script>
+function addText(e){
+  if(e.propertyName === "flex-grow"){
+    this.classList.toggle("text")
+  };
+}
 
 
+function addClass (){
+  this.classList.toggle('open');
+}
 
+</script>
 </body>
 </html>
